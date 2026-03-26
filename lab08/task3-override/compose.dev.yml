@@ -1,0 +1,8 @@
+services:
+  app:
+    environment:
+      MODE: "dev"
+    # Додаємо встановлення Flask перед запуском з прапорцем --debug
+    command: sh -c "pip install flask && python app.py --debug"
+    ports:
+      - "7001:7000"

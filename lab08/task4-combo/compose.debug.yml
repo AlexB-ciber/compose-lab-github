@@ -1,0 +1,11 @@
+services:
+  app:
+    environment:
+      LOG: "debug"
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    # Використовуємо sh -c, щоб переконатися, що Flask є, якщо ми затерли його волюмом
+    command: sh -c "pip install flask && python app.py"
+    ports:
+      - "8011:8010"
